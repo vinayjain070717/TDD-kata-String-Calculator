@@ -21,4 +21,10 @@ public class CalculatorTestCasesUnit
 		assertEquals(25,new StringCalculator().Add("15,10"));
 	}
 
+	@Test
+	public void TestWithMultipleNumberInString()
+	{
+		assertEquals(116,new StringCalculator().Add("15,10,25,10,56"));
+	}
+
 }
