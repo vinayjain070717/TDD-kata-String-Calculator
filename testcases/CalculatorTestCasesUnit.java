@@ -27,4 +27,11 @@ public class CalculatorTestCasesUnit
 		assertEquals(116,new StringCalculator().Add("15,10,25,10,56"));
 	}
 
+	@Test
+	public void TestWithNewLineCharacterInString()
+	{
+		assertEquals(30,new StringCalculator().Add("15,10\n5"));
+	}
+
+	
 }

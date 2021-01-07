@@ -32,7 +32,7 @@ public class StringCalculator
 		else
 		{
 			//more than one number
-			String[] strs=numberString.split(",");
+			String[] strs=numberString.split(",|\n");
 			return utility.sumOfString(strs);
 		}
 
