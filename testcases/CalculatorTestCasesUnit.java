@@ -74,5 +74,10 @@ public class CalculatorTestCasesUnit
 		}
 	}
 
+	@Test
+	public void TestWithNumberGreaterThanThousand()
+	{
+		assertEquals(1020,new StringCalculator().Add("2,15,1000,1002,2,2000,1"));
+	}
 	
 }

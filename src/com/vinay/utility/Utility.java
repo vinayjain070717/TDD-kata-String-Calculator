@@ -27,6 +27,7 @@ public class Utility
 		for(int i=0;i<numbers.length;i++)
 		{
 			int num=toInt(numbers[i]); 
+			if(num>1000) continue;
 			sum=sum+num;
 		}
 		return sum;
