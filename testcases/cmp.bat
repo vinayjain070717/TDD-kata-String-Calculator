@@ -1,0 +1,1 @@
+javac -cp ..\jarFiles\*;..\classes\;. *.java
