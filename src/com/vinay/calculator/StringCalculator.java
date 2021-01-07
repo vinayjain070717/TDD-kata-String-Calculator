@@ -1,19 +1,5 @@
 package com.vinay.calculator;
 import java.util.regex.*;
-
-class Utility
-{
-	public int toInt(String str)
-	{
-		return Integer.parseInt(str);
-	}
-	public int sumOfString(String[] numbers)
-	{
-		int sum=0;
-		for(int i=0;i<numbers.length;i++) sum=sum+toInt(numbers[i]);
-		return sum;
-	}
-}
 public class StringCalculator
 {
 	public Utility utility;

@@ -45,5 +45,10 @@ public class CalculatorTestCasesUnit
 		assertEquals(4,new StringCalculator().Add("//#\n1#2#1"));
 	}
 
+	@Test(expected=NegativeNumberException.class)
+	public void TestWithNegativeNumberInString()
+	{
+		assertEquals(4,new StringCalculator().Add("2,-1,3,4"));
+	}
 	
 }
