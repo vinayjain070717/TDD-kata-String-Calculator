@@ -33,5 +33,17 @@ public class CalculatorTestCasesUnit
 		assertEquals(30,new StringCalculator().Add("15,10\n5"));
 	}
 
+	@Test
+	public void TestWithDifferentDelimiter1()
+	{
+		assertEquals(50,new StringCalculator().Add("//;\n17;18;15"));
+	}
+
+	@Test
+	public void TestWithDifferentDelimiter2()
+	{
+		assertEquals(4,new StringCalculator().Add("//#\n1#2#1"));
+	}
+
 	
 }
