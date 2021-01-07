@@ -37,7 +37,7 @@ return delimiter;
 
 public String combineMultipleDelimiter(String delimiter)
 {
-String regex="\\[(.)\\]";
+String regex="\\[(.+?)\\]";
 StringBuilder sb=new StringBuilder();
 Matcher matcher=Pattern.compile(regex,Pattern.MULTILINE).matcher(delimiter);
 while(matcher.find()) sb.append(matcher.group(1)+"|");
