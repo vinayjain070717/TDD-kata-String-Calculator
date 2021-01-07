@@ -1,0 +1,1 @@
+javac -d ..\classes -cp ..\jarFiles\*;. com\vinay\exception\*
