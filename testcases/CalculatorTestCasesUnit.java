@@ -79,5 +79,11 @@ public class CalculatorTestCasesUnit
 	{
 		assertEquals(1020,new StringCalculator().Add("2,15,1000,1002,2,2000,1"));
 	}
+
+	@Test
+	public void TestWithCustomAnyLenghtDelimiter()
+	{
+		assertEquals(11,new StringCalculator().Add("//[,,,]\n1,,,2,,,3,,,5"));
+	}
 	
 }

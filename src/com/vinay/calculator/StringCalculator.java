@@ -1,14 +1,15 @@
 package com.vinay.calculator;
-import java.util.regex.*;
 import com.vinay.utility.*;
 public class StringCalculator
 {
-	public Utility utility;
+	public CalculationUtility calculationUtility;
+	public ParserUtility parserUtility;
 	public String delimiter;
 	public String[] strs;
 	public StringCalculator()
 	{
-		utility=new Utility();
+		calculationUtility=new CalculationUtility();
+		parserUtility=new ParserUtility();
 		delimiter=",|\n"; // default delimeter
 	}
 	public int Add(String numberString) 
@@ -17,27 +18,18 @@ public class StringCalculator
 		if(numberString.length()==0) return 0;
 		else if(numberString.startsWith("//"))
 		{
-			String regex="//(.)\n(.*)";
-			Pattern pattern=Pattern.compile(regex,Pattern.MULTILINE);
-			Matcher matcher=pattern.matcher(numberString);
-			if(matcher.find())
-			{
-				delimiter=matcher.group(1);
-				String customStr=matcher.group(2);
-				strs=customStr.split(delimiter);
-			}
-			return utility.sumOfString(strs);
+			return calculationUtility.sumOfString(parserUtility.parseString(numberString));
 		}
 		else if(numberString.indexOf(",")==-1)
 		{
 			//one number
-			return Integer.parseInt(numberString);
+			return calculationUtility.toInt(numberString);
 		}
 		else
 		{
 			//more than one number
 			strs=numberString.split(delimiter);
-			return utility.sumOfString(strs);
+			return calculationUtility.sumOfString(strs);
 		}
 
 	}
