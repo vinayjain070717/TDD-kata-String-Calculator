@@ -11,7 +11,7 @@ public class Utility
 		for(int i=0;i<numbers.length;i++)
 		{
 			int num=toInt(numbers[i]); 
-			if(num<0) throw new NegativeNumberException("negatives not allowed : "+num);
+			if(num<0) throw new NegativeNumberException("Negatives not allowed : "+num);
 			sum=sum+num;
 		}
 		return sum;

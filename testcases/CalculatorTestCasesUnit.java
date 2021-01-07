@@ -1,5 +1,5 @@
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import org.junit.*;
+import static org.junit.Assert.*;
 import com.vinay.calculator.*;
 public class CalculatorTestCasesUnit
 {
@@ -45,10 +45,18 @@ public class CalculatorTestCasesUnit
 		assertEquals(4,new StringCalculator().Add("//#\n1#2#1"));
 	}
 
-	@Test(expected=NegativeNumberException.class)
+	@Test (expected=NegativeNumberException.class)
 	public void TestWithNegativeNumberInString()
 	{
-		assertEquals(4,new StringCalculator().Add("2,-1,3,4"));
+		try
+		{
+			assertEquals(4,new StringCalculator().Add("2,-1,3,4"));
+			fail("Did not thrown exception on negative number");
+		}catch(NegativeNumberException ex)
+		{
+			assertEquals("Negatives not allowed : -1",ex.getMessage());
+			throw ex;
+		}
 	}
 	
 }

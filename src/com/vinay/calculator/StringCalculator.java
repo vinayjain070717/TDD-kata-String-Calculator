@@ -10,7 +10,7 @@ public class StringCalculator
 		utility=new Utility();
 		delimiter=",|\n"; // default delimeter
 	}
-	public int Add(String numberString)
+	public int Add(String numberString) throws NegativeNumberException
 	{
 		numberString=numberString.trim();
 		if(numberString.length()==0) return 0;
