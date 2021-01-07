@@ -1,6 +1,7 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 import com.vinay.calculator.*;
+import com.vinay.exception.*;
 public class CalculatorTestCasesUnit
 {
 	@Test
@@ -58,5 +59,20 @@ public class CalculatorTestCasesUnit
 			throw ex;
 		}
 	}
+
+	@Test (expected=NegativeNumberException.class)
+	public void TestWithMultipleNegativeNumberInString()
+	{
+		try
+		{
+			assertEquals(4,new StringCalculator().Add("2,-1,-3,-4"));
+			fail("Did not thrown exception on negative number");
+		}catch(NegativeNumberException ex)
+		{
+			assertEquals("Negatives not allowed : -1 -3 -4",ex.getMessage());
+			throw ex;
+		}
+	}
+
 	
 }

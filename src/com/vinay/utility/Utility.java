@@ -1,5 +1,6 @@
 package com.vinay.utility;
 import com.vinay.exception.*;
+
 public class Utility
 {
 	StringBuilder sb;
@@ -7,14 +8,25 @@ public class Utility
 	{
 		return Integer.parseInt(str);
 	}
-	public int sumOfString(String[] numbers) throws NegativeNumberException
+	public void checkForNegativeNumbers(String[] numbers)
+	{
+		sb=new StringBuilder();
+		for(int i=0;i<numbers.length;i++)
+		{
+			if(toInt(numbers[i])<0)
+			{
+				sb.append(numbers[i]+" ");
+			}
+		}
+		if(sb.toString().length()>0) throw new NegativeNumberException("Negatives not allowed : "+sb.toString().trim());
+	}
+	public int sumOfString(String[] numbers)
 	{
 		int sum=0;
-		boolean isNegativeNumberExist=false;
+		checkForNegativeNumbers(numbers);
 		for(int i=0;i<numbers.length;i++)
 		{
 			int num=toInt(numbers[i]); 
-			if(num<0) throw new NegativeNumberException("Negatives not allowed : "+num); // multiple negative number case
 			sum=sum+num;
 		}
 		return sum;

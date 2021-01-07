@@ -1,5 +1,6 @@
 package com.vinay.calculator;
 import java.util.regex.*;
+import com.vinay.utility.*;
 public class StringCalculator
 {
 	public Utility utility;
@@ -10,7 +11,7 @@ public class StringCalculator
 		utility=new Utility();
 		delimiter=",|\n"; // default delimeter
 	}
-	public int Add(String numberString) throws NegativeNumberException
+	public int Add(String numberString) 
 	{
 		numberString=numberString.trim();
 		if(numberString.length()==0) return 0;
