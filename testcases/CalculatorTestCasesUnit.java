@@ -86,4 +86,10 @@ public class CalculatorTestCasesUnit
 		assertEquals(11,new StringCalculator().Add("//[,,,]\n1,,,2,,,3,,,5"));
 	}
 	
+	@Test
+	public void TestWithMultipleDelimeter()
+	{
+		assertEquals(10, new StringCalculator().Add("//[;][#][*]\n1;2#3*4"));
+	}
+
 }
